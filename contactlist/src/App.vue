@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <AddContact /><br><hr>
-    <ViewContacts v-bind:contacts="contacts"/>
+    <ViewContacts v-bind:Contacts="Contacts"/>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return{
-      contacts: [
+      Contacts: [
         {
         id: 1,
         name: "John",

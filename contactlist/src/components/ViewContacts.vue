@@ -1,6 +1,6 @@
 <template>
   <div id="ViewContact">
-      <div v-bind:key="contact.id" v-for="contact in contacts">
+      <div v-bind:key="Contact.id" v-for="Contact in Contacts">
           <Contacts v-bind:Contacts="Contacts"/>
       </div>
   </div>
@@ -13,11 +13,10 @@ import Contacts from "./Contacts.vue"
 
 export default {
   name: 'ViewContact',
-  props:["contacts"],
+  props:["Contacts"],
   components: {
     Contacts
   },
-  
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="Contacts">
-      <h3>{{contacts.name}}</h3>
+      <h3>{{Contacts.name}}</h3>
   </div>
 </template>
 
@@ -17,14 +17,14 @@ export default {
 </script>
 
 <style>
-    .contacts {
+    #Contacts {
         background:#f4f4f4;
         padding:10px;
         border-bottom:1px #ccc dotted;
     }
     .del {
         background: #ff0000;
-        color: #fff;
+        color: #000;
         padding :5px 9px;
         border-radius: 50%;
         cursor: pointer;
