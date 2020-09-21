@@ -2,14 +2,14 @@
   <div id="app">
     <Header />
     <AddContact /><br><hr>
-    <ViewContact />
+    <ViewContacts v-bind:contacts="contacts"/>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header"
 import AddContact from "./components/AddContact"
-import ViewContact from "./components/ViewContacts"
+import ViewContacts from "./components/ViewContacts"
 
 
 export default {
@@ -17,7 +17,31 @@ export default {
   components: {
     Header,
     AddContact,
-    ViewContact
+    ViewContacts
+  },
+  data() {
+    return{
+      contacts: [
+        {
+        id: 1,
+        name: "John",
+        surname: "Doe",
+        cellnumber: "0653310799"
+      },
+      {
+        id: 2,
+        name: "Sally",
+        surname: "Doe",
+        cellnumber: "0653318819"
+      },
+      {
+        id: 3,
+        name: "Marge",
+        surname: "Doe",
+        cellnumber: "0765513746"
+      }
+      ]
+    }
   }
 }
 </script>
@@ -28,6 +52,7 @@ export default {
     margin: 0;
     padding: 0;
     background: #111111;
+    color: aliceblue;
   }
 
   body {
