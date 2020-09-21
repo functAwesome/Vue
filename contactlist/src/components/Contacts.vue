@@ -21,7 +21,10 @@ export default {
     #Contacts {
         background:#f4f4f4;
         padding:10px;
+        margin-top: 10px;
+        font-size: 20px;
         border-bottom:1px #ccc dotted;
+        text-align: center;
     }
     .del {
         background: #ff0000;

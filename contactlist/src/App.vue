@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddContact /><br><hr>
+    <AddContact v-on:add-contact="AddContact"/><br><hr><br>
     <ViewContacts v-bind:Contacts="Contacts" v-on:del-contact="deleteContact" />
   </div>
 </template>
@@ -43,6 +43,9 @@ export default {
   methods:{
     deleteContact(id){
       this.Contacts = this.Contacts.filter(Contacts => Contacts.id != id);
+    },
+    AddContact(NewContact) {
+      this.Contacts = [...this.Contacts, NewContact];
     }
   }
 }
@@ -53,7 +56,7 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: #111111;
+    background: #222222;
     color: aliceblue;
   }
 

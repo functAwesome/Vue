@@ -17,13 +17,13 @@ export default {
 
 <style scoped>
     h1 {
-        position: fixed;
         top: 0px;
         font-size: 3em;
         background: #A0D2Eb;
         text-align: center;
     }
     #Header {
+        position: fixed;
         width: 100%;
         height: 11vh;
         background: #A0D2Eb;
@@ -31,6 +31,5 @@ export default {
         text-align: center;
         padding: 10px;
         padding-top: 20px;
-        padding-left: 40%;
     }
 </style>
