@@ -1,6 +1,7 @@
 <template>
   <div id="Contacts">
-      <h3>{{Contacts.name}}</h3>
+      <h3>Name: {{Contacts.name}}  <br>Cell Number: {{Contacts.cellnumber}}</h3> 
+      <input type="button" @click="$emit('del-contact', Contacts.id)" value="Delete"> <input type="button" value="Edit">
   </div>
 </template>
 

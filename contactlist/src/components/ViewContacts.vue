@@ -1,7 +1,7 @@
 <template>
   <div id="ViewContact">
       <div v-bind:key="Contact.id" v-for="Contact in Contacts">
-          <Contacts v-bind:Contacts="Contacts"/>
+          <Contacts v-bind:Contacts="Contact" v-on:del-contact="$emit('del-contact', Contact.id)" />
       </div>
   </div>
 </template>

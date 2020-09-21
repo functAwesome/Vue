@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <AddContact /><br><hr>
-    <ViewContacts v-bind:Contacts="Contacts"/>
+    <ViewContacts v-bind:Contacts="Contacts" v-on:del-contact="deleteContact" />
   </div>
 </template>
 
@@ -24,23 +24,25 @@ export default {
       Contacts: [
         {
         id: 1,
-        name: "John",
-        surname: "Doe",
+        name: "John Doe",
         cellnumber: "0653310799"
       },
       {
         id: 2,
-        name: "Sally",
-        surname: "Doe",
+        name: "Sally Doe",
         cellnumber: "0653318819"
       },
       {
         id: 3,
-        name: "Marge",
-        surname: "Doe",
+        name: "Marge Simpson",
         cellnumber: "0765513746"
       }
       ]
+    }
+  },
+  methods:{
+    deleteContact(id){
+      this.Contacts = this.Contacts.filter(Contacts => Contacts.id != id);
     }
   }
 }
