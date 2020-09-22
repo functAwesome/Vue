@@ -20,6 +20,7 @@ export default {
           cellnumber:''
       }
   },
+  props:["contacts"],
   components: {
     
   },
@@ -27,7 +28,7 @@ export default {
       EditContact(e) {
         e.preventDefault();
         const EditedContact ={
-            id: this.contact.id,
+            id: this.Contact.id,
             name: this.nameandsurname,
             cellnumber: this.cellnumber
         }
