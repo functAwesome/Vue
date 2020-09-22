@@ -4,14 +4,14 @@
             <form @submit="AddContact">
                 <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><hr>
                 <input type="text" v-model="cellnumber" placeholder="Cell Number"><hr>
-                <input type="submit" value="Add Contact">
+                <input type="submit" value="Save">
             </form>
         </div>
     </div>
 </template>
 
 <script>
-import uuid from "uuid";
+import { v4 as uuid } from "uuid";
 
 export default {
   name: 'AddContact',
@@ -28,7 +28,7 @@ export default {
       AddContact(e) {
         e.preventDefault();
         const NewContact ={
-            id: uuid.v4(),
+            id: uuid(),
             name: this.nameandsurname,
             cellnumber: this.cellnumber
         }
