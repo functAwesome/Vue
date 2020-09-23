@@ -57,9 +57,13 @@ export default {
       this.isEdit = true
     },
     SaveContact(SaveContact) {
-      let i = this.Contacts.findIndex(e => e == 'this.selectedContact', console.log(this.selectedContact))
-      this.Contacts[i] = SaveContact
-      console.log(i);
+      let i = this.Contacts.findIndex(e => e.id == this.selectedContact)
+
+      console.log(this.Contacts)
+      this.Contacts[i].id = SaveContact.id
+      this.Contacts[i].name = SaveContact.name
+      this.Contacts[i].cellnumber = SaveContact.cellnumber
+      console.log(this.Contacts)
     }
   }
 }

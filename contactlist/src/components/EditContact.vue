@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <div id="EditContact" class="centered">
-            <h1>Edit an existing contact:</h1>
             <form @submit="EditContact">
                 <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><hr>
                 <input type="text" v-model="cellnumber" placeholder="Cell Number"><hr>
@@ -12,11 +11,12 @@
 </template>
 
 <script>
-
+import { v4 as uuid } from "uuid";
 export default {
   name: 'EditContact',
   data(){
       return {
+          id:'',
           nameandsurname: '',
           cellnumber:''
       }
@@ -29,6 +29,7 @@ export default {
       EditContact(e) {
         e.preventDefault();
         const SaveContact ={
+            id:uuid(),
             name: this.nameandsurname,
             cellnumber: this.cellnumber
         }
