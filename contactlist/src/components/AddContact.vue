@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <div id="AddContact" class="centered">
+            <h1>Add a new contact:</h1>
             <form @submit="AddContact">
                 <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><hr>
                 <input type="text" v-model="cellnumber" placeholder="Cell Number"><hr>

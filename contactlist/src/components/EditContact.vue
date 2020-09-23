@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <div id="EditContact" class="centered">
+            <h1>Edit an existing contact:</h1>
             <form @submit="EditContact">
                 <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><hr>
                 <input type="text" v-model="cellnumber" placeholder="Cell Number"><hr>
@@ -28,11 +29,11 @@ export default {
       EditContact(e) {
         e.preventDefault();
         const EditedContact ={
-            id: this.Contact.id,
+            id: this.contact.id,
             name: this.nameandsurname,
             cellnumber: this.cellnumber
         }
-        this.$emit('edit-contact', EditedContact);
+        this.$emit('save-contact', EditedContact);
     }
   }
 }
@@ -40,7 +41,7 @@ export default {
 
 <style scoped>
     
-    #AddContact {
+    #EditContact {
         margin-left: auto;
         margin-right: auto;
         margin-top: 11vh;

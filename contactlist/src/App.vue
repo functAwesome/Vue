@@ -56,13 +56,9 @@ export default {
       this.selectedContact = id
       this.isEdit = true
     },
-    SaveContact(EditedContact, id, Contacts) {
-      for (let i=0; i<Contacts.length ;i++){
-        if(this.Contacts[i].id == id){
-          this.Contacts[i].name =  EditedContact.name;
-          this.Contacts[i].cellnumber =  EditedContact.cellnumber;
-        }
-      }
+    SaveContact(EditedContact) {
+      const index = this.Contacts.findIndex(e => e == EditedContact.id);
+      this.Contacts[index] = EditedContact;
     }
   }
 }
@@ -83,3 +79,4 @@ export default {
   }
   
 </style>
+
