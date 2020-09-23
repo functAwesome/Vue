@@ -21,19 +21,18 @@ export default {
           cellnumber:''
       }
   },
-  props:["contacts"],
+  props:["contact"],
   components: {
     
   },
   methods: {
       EditContact(e) {
         e.preventDefault();
-        const EditedContact ={
-            id: this.contact.id,
+        const SaveContact ={
             name: this.nameandsurname,
             cellnumber: this.cellnumber
         }
-        this.$emit('save-contact', EditedContact);
+        this.$emit('save-contact', SaveContact);
     }
   }
 }

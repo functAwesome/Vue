@@ -25,7 +25,7 @@ export default {
   data() {
     return{
       isEdit: false,
-      selectedContact: null,
+      selectedContact: '',
       Contacts: [
         {
         id: 1,
@@ -56,9 +56,10 @@ export default {
       this.selectedContact = id
       this.isEdit = true
     },
-    SaveContact(EditedContact) {
-      const index = this.Contacts.findIndex(e => e == EditedContact.id);
-      this.Contacts[index] = EditedContact;
+    SaveContact(SaveContact) {
+      let i = this.Contacts.findIndex(e => e == 'this.selectedContact', console.log(this.selectedContact))
+      this.Contacts[i] = SaveContact
+      console.log(i);
     }
   }
 }
