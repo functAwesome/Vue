@@ -1,12 +1,10 @@
 <template>
-    <div class="container">
-        <div id="AddContact" class="centered">
-            <form @submit="AddContact">
-                <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><hr>
-                <input type="text" v-model="cellnumber" placeholder="Cell Number"><hr>
-                <input type="submit" value="Save">
-            </form>
-        </div>
+    <div id="AddContact" class="centered">
+        <form @submit="AddContact">
+            <input type="text" v-model="nameandsurname" placeholder="Name and Surname"><br>
+            <input type="text" v-model="cellnumber" placeholder="Cell Number"><br>
+            <input type="submit" value="Save">
+        </form>
     </div>
 </template>
 
@@ -16,23 +14,23 @@ import { v4 as uuid } from "uuid";
 export default {
   name: 'AddContact',
   data(){
-      return {
-          nameandsurname: '',
-          cellnumber:''
-      }
+    return {
+        nameandsurname: '',
+        cellnumber:''
+    }
   },
   components: {
     
   },
   methods: {
-      AddContact(e) {
-        e.preventDefault();
-        const NewContact ={
-            id: uuid(),
-            name: this.nameandsurname,
-            cellnumber: this.cellnumber
-        }
-        this.$emit('add-contact', NewContact);
+    AddContact(e) {
+    e.preventDefault();
+    const NewContact ={
+        id: uuid(),
+        name: this.nameandsurname,
+        cellnumber: this.cellnumber
+    }
+    this.$emit('add-contact', NewContact);
     }
   }
 }
@@ -41,11 +39,13 @@ export default {
 <style scoped>
     
     #AddContact {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 11vh;
+        width: 100%;
+        margin-top: 20vh;
         display: inline-block;
         align-items: center;
+    }
+    form {
+        text-align: center;
     }
     input {
         text-align: center;
@@ -53,6 +53,14 @@ export default {
         font-size: 18px;
         width: 20em;
         height: 4em;
-        color: #A0D2Eb;
+        color: #222222;
+        border:none;
+        background-color: rgba(181, 188, 165, 0.3);
+    }
+    hr {
+        width: 20em;
+        height: 1px;
+        background: #384262 !important;
+        border:none;
     }
 </style>

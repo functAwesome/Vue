@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <EditContact v-if="isEdit" :contact="selectedContact" v-on:save-contact="SaveContact" />
-    <AddContact v-else v-on:add-contact="AddContact" /> <br> <hr> <br>
+    <AddContact v-else v-on:add-contact="AddContact" />
     <ViewContacts v-bind:Contacts="Contacts" v-on:del-contact="DeleteContact" v-on:edit-contact="EditContact" />
   </div>
 </template>
@@ -82,6 +82,13 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
   }
-  
+  hr {
+        height: 1px;
+        background: #B5BCA5 !important;
+        border:none;
+    }
+  ViewContacts {
+    margin-top: 8%;
+  }
 </style>
 

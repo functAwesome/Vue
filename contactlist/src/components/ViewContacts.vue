@@ -1,12 +1,13 @@
 <template>
   <div id="ViewContact">
-      <div v-bind:key="Contact.id" v-for="Contact in Contacts">
-          <Contacts 
-          v-bind:Contacts="Contact" 
-          v-on:del-contact="$emit('del-contact', Contact.id)" 
-          v-on:edit-contact="$emit('edit-contact', Contact.id)" 
-          />
-      </div>
+    <hr>
+    <div v-bind:key="Contact.id" v-for="Contact in Contacts">
+        <Contacts 
+        v-bind:Contacts="Contact" 
+        v-on:del-contact="$emit('del-contact', Contact.id)" 
+        v-on:edit-contact="$emit('edit-contact', Contact.id)" 
+        />
+    </div>
   </div>
 </template>
 
@@ -23,6 +24,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+hr {
+  border:none;
+  background: #384262 !important;
+  height: 5px;
+}
 </style>
